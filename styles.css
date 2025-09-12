@@ -1,0 +1,348 @@
+        h2 {
+          color: #ffa600; /* Red using hex code */
+        }
+h3 {
+  color: rgb(154, 240, 4);
+}
+        p {
+  margin: 0;
+  padding: 0;
+}
+.no-gap {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.heading-container {
+    display: flex;
+    gap: 60px;
+    align-items: center; /* Aligns items vertically in the middle */
+}
+
+    img {
+        float: right; /* or float: right; */
+       max-width: 100px;
+  height: 100px;;
+    }
+
+.carousel-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden; /* Hides the images that are outside the visible area */
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content; /* Allows the track to be wider than its container */
+    animation: scroll 10s linear infinite; /* Animation property */
+}
+
+/* Optional: Pause animation on hover */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-slide {
+    flex-shrink: 0; /* Prevents slides from shrinking */
+    width: 30vw; /* Takes full viewport width */
+    max-width: 120px;
+    height: auto;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+/* Define the scrolling animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0); /* Start at original position */
+    }
+    to {
+        /*
+        The track moves to the left by half its width.
+        In the JS, we'll duplicate the slides to create an infinite loop.
+        */
+        transform: translateX(-50%); 
+    }
+}
+.whats-new-container {
+   display: flex; /* Enables flexbox layout */
+    gap: 20px; /* Space between the two content areas */
+    align-items: flex-start; /* Aligns content to the top */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+}
+
+.whats-new-container h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ccc;
+}
+
+.tab-button.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+.tab-content {
+    display: none; /* Hide tab content by default */
+}
+
+.tab-content.active {
+    display: block; /* Show active tab content */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the square area without distortion */
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 9 / 16; /* Maintains video aspect ratio */
+    margin-bottom: 10px;
+}
+.container {
+  display: flex;
+  gap: 20px; /* Adjust spacing as needed */
+}
+
+.main-content {
+  flex: 2; /* Main content takes up more space */
+}
+
+.sidebar {
+  flex: 1; /* Sidebar takes up less space */
+}
+/* Basic styling for the body */
+/* ... (Keep your existing CSS) ... */
+
+.whats-new-box2 {
+    /* ... (Your existing whats-new-box styling) ... */
+    position: relative; /* Needed for positioning the pseudo-element */
+    max-height: 5em; /* Adjust based on your line-height; 5 lines * 1em line-height = 5em */
+    overflow: show; /* Hides the extra text */
+    transition: max-height 0.5s ease-in-out; /* Adds a smooth expansion effect */
+}
+
+/* Pseudo-element for the fade effect */
+.whats-new-box2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0em; /* Height of the fade effect */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    pointer-events: none; /* Allows the button below to be clickable */
+}
+
+/* State when the box is expanded */
+.whats-new-box2.expanded {
+    max-height: 1000px; /* A large value to ensure the entire content is visible */
+}
+
+.whats-new-box2.expanded::after {
+    display: none; /* Hide the fade effect when expanded */
+}
+
+/* Button styling */
+#read-more-btn {
+    background: #f1c40f;
+    border: none;
+    color: #2c3e50;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* ---- Footer Styling ---- */
+.site-footer {
+    background-color: #2c3e50; /* Dark background color */
+    color: #ecf0f1; /* Light text color */
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1 1 250px; /* Adjusts column width for responsiveness */
+    margin: 0 15px 30px 15px;
+}
+
+.footer-column h4 {
+    color: #f1c40f; /* Heading color */
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #f1c40f;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer ul a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer ul a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #34495e;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #f1c40f;
+}
+
+.newsletter-heading {
+    margin-top: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    color: #2c3e50;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #e6b900;
+}
+
+.footer-bottom {
+    background-color: #212f3d;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #34495e;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+/* --- Responsive Design for Footer --- */
+@media (max-width: 768px) {
+    .site-footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-column {
+        flex-basis: 100%;
+        margin: 0 0 30px 0;
+    }
+    
+    .footer-column h4 {
+        text-align: center;
+    }
+    
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+.name {
+    align: right
+}
