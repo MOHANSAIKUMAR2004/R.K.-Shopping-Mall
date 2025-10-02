@@ -74,7 +74,7 @@ h3 {
    display: flex; /* Enables flexbox layout */
     gap: 20px; /* Space between the two content areas */
     align-items: flex-start; /* Aligns content to the top */
-    max-width: 1200px;
+    max-width: 100%;
     margin: 20px auto;
     padding: 0 20px;
 }
@@ -346,4 +346,5 @@ h3 {
 .name {
     align: right
 }
+
 
