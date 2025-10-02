@@ -20,8 +20,8 @@ h3 {
 
     img {
         float: right; /* or float: right; */
-       max-width: 100px;
-  height: 100px;;
+       max-width: 100%;
+  height: auto;;
     }
 
 .carousel-container {
@@ -346,3 +346,4 @@ h3 {
 .name {
     align: right
 }
+
